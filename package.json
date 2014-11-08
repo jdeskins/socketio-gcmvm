@@ -1,0 +1,12 @@
+{
+  "name": "socketio-gcmvm",
+  "version": "0.0.1",
+  "description": "my first socket.io app on managed vm",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.3.1",
+    "socket.io": "1.2.0"
+  }
+}
