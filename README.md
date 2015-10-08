@@ -6,22 +6,21 @@ A quick demo for node.js and socket.io on Google App Engine Managed VMs using Cu
 
 Start by cloning this repository.
 
-To run the app locally in the dev appserver:
+To run the app locally:
 
 ~~~~
-gcloud preview app run .
+npm install
+npm start
 ~~~~
 
-The demo chat app is then available at:  http://[DOCKER-IP]:3000
+The demo chat app is then available at:  http://localhost:3000
 
-For example: http://192.168.59.103:3000
+Docker is no longer required.
 
-You will see an error message in the console indicating request to '/_ah/start' failed.  This is due to the sdk looking for that route on port 8080 - which doesn't exist.
-
-To deploy the app in production:
+To deploy the app to Google Cloud:
 
 ~~~~
-gcloud --project YOUR-PROJECT-NAME-HERE preview app deploy --server preview.appengine.google.com .
+gcloud preview app deploy app.yaml
 ~~~~
 
 Since this app is using port 3000, you will need to go into the Managed VM console and edit the Network firewall to allow access to this port.  The app will then be available from the VM's external IP address on socket 3000.  Example:  http://[VM-EXTERNAL-IP]:3000
